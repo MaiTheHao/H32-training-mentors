@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mentor Training System K21</title>
+		<link rel="stylesheet" href="style.css" />
+		<meta name="description" content="Modern mentor training management system" />
+		<link rel="icon" type="image/svg+xml" href="https://oj.iuhcoder.com/static/icons/logo.svg" />
+	</head>
+	<body>
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<div class="header-content">
+					<div class="logo">
+						<image src="https://oj.iuhcoder.com/static/icons/logo.svg" alt="IUH Coder Logo" />
+					</div>
+					<div class="status-badge">
+						<div class="status-dot"></div>
+						<span>Hệ thống hoạt động</span>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!-- Main Content -->
+		<main class="main-content">
+			<div class="container">
+				<!-- Stats Overview -->
+				<div class="stats-grid">
+					<div class="stat-card">
+						<div class="stat-label">Tổng số thành viên</div>
+						<div class="stat-value" id="total-members">0</div>
+						<div class="stat-trend">↗ Đã đồng bộ</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-label">Cập nhật lần cuối</div>
+						<div class="stat-value text-sm" id="last-update">--:--:--</div>
+						<div class="stat-trend">🕒 Thời gian thực</div>
+					</div>
+					<div class="stat-card">
+						<div class="stat-label">Trạng thái</div>
+						<div class="stat-value text-sm text-primary">Kết nối</div>
+						<div class="stat-trend">✓ An toàn</div>
+					</div>
+				</div>
+
+				<!-- Data Table Card -->
+				<div class="card">
+					<div class="card-header">
+						<h1 class="card-title">Danh sách thành viên</h1>
+						<p class="card-description">Thông tin chi tiết về các thành viên trong chương trình đào tạo mentor</p>
+					</div>
+					<div class="card-content">
+						<div id="student-data">
+							<!-- Loading state -->
+							<div class="loading">
+								<div class="spinner"></div>
+								<p>Đang tải dữ liệu thành viên...</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<script src="js/main.js" type="module"></script>
+	</body>
+</html>
