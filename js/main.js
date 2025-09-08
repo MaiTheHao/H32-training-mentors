@@ -2,7 +2,6 @@ import { getData } from './api-service.js';
 import { parseresponseToObject } from './data-parser.js';
 import { renderStudents } from './ui-service.js';
 
-let timeoutId = null;
 let isFetching = false;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,17 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('visibilitychange', () => {
-	if (document.hidden) {
-		if (timeoutId) {
-			clearTimeout(timeoutId);
-			timeoutId = null;
-		}
-	} else {
-		if (!timeoutId && !isFetching) {
+	if (!document.hidden) {
+		if (!isFetching) {
 			fetchDataLoop();
 		}
 	}
 });
+
+const refreshButton = document.getElementById('refresh-button');
+if (refreshButton) {
+	refreshButton.addEventListener('click', () => {
+		if (!isFetching) {
+			fetchDataLoop();
+		}
+	});
+}
 
 function initApp() {
 	fetchDataLoop();
@@ -37,6 +40,5 @@ async function fetchDataLoop() {
 		console.error('Lỗi khi tải dữ liệu:', error);
 	} finally {
 		isFetching = false;
-		timeoutId = setTimeout(fetchDataLoop, 5000);
 	}
 }

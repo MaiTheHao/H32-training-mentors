@@ -3,23 +3,16 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Mentor Training System K21</title>
+		<title>H32 Mentors</title>
 		<link rel="stylesheet" href="style.css" />
 		<meta name="description" content="Modern mentor training management system" />
-		<link rel="icon" type="image/svg+xml" href="https://oj.iuhcoder.com/static/icons/logo.svg" />
 	</head>
 	<body>
 		<!-- Header -->
 		<header class="header">
 			<div class="container">
 				<div class="header-content">
-					<div class="logo">
-						<image src="https://oj.iuhcoder.com/static/icons/logo.svg" alt="IUH Coder Logo" />
-					</div>
-					<div class="status-badge">
-						<div class="status-dot"></div>
-						<span>Hệ thống hoạt động</span>
-					</div>
+					<div class="logo">H32 Programming Lab</div>
 				</div>
 			</div>
 		</header>
@@ -30,19 +23,11 @@
 				<!-- Stats Overview -->
 				<div class="stats-grid">
 					<div class="stat-card">
-						<div class="stat-label">Tổng số thành viên</div>
-						<div class="stat-value" id="total-members">0</div>
-						<div class="stat-trend">↗ Đã đồng bộ</div>
-					</div>
-					<div class="stat-card">
-						<div class="stat-label">Cập nhật lần cuối</div>
-						<div class="stat-value text-sm" id="last-update">--:--:--</div>
-						<div class="stat-trend">🕒 Thời gian thực</div>
-					</div>
-					<div class="stat-card">
-						<div class="stat-label">Trạng thái</div>
-						<div class="stat-value text-sm text-primary">Kết nối</div>
-						<div class="stat-trend">✓ An toàn</div>
+						<div>
+							<div class="stat-label">Tổng số thành viên</div>
+							<div class="stat-value" id="total-members">0</div>
+						</div>
+						<button id="refresh-button" class="refresh-btn">↗ Refresh</button>
 					</div>
 				</div>
 
